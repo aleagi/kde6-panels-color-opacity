@@ -11,14 +11,6 @@ A powerful and intuitive Plasmoid widget for KDE Plasma 6 that grants you total 
 - **Light/Dark Mode Aware**: Automatically adjusts contrast and readability based on your system theme.
 - **Multiple Panel Support**: Configure individual settings for different panels (Top, Bottom, Sidebar).
 
-## 🖼️ Screenshots
-
-*Add your own screenshots here to showcase your widget!*
-
-| Custom Color + Blur | Fully Transparent | Solid Dark Panel |
-| :---: | :---: | :---: |
-| ![Color & Blur](https://via.placeholder.com/300x150?text=Color+%2B+Blur) | ![Transparent](https://via.placeholder.com/300x150?text=Fully+Transparent) | ![Solid](https://via.placeholder.com/300x150?text=Solid+Dark) |
-
 ## 🛠️ Requirements
 
 - **KDE Plasma 6.0+**
@@ -30,7 +22,7 @@ A powerful and intuitive Plasmoid widget for KDE Plasma 6 that grants you total 
 
 ### Method 1: Easy Install (via KPackagetool)
 
-1. Download the latest release from the [Releases](https://github.com/your-username/kde6-panels-color-opacity/releases) page.
+1. Download the latest release from the [Releases](https://github.com/aleagi/kde6-panels-color-opacity/releases) page.
 2. Open your terminal in the downloaded folder and run:
    ```bash
    kpackagetool6 -t Plasma/Applet -i .
@@ -42,7 +34,7 @@ Clone this repository to your local Plasmoid directory:
 
 ```bash
 mkdir -p ~/.local/share/plasma/plasmoids/
-git clone https://github.com/your-username/kde6-panels-color-opacity.git ~/.local/share/plasma/plasmoids/org.kde.panelcoloropacity
+git clone https://github.com/aleagi/kde6-panels-color-opacity.git ~/.local/share/plasma/plasmoids/org.kde.panelcoloropacity
 ```
 
 ## 🚀 Usage
