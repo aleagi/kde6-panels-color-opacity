@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "aleagi@gmail.com",
+                "Name": "Luiz Gustavo ALEAGI Nunes"
+            }
+        ],
+        "Category": "Windows and Tasks",
+        "Description": "Control KDE Plasma 6 Panel background color and opacity.",
+        "Icon": "preferences-desktop-colors",
+        "Id": "org.kde.plasma.panelcoloropacity",
+        "Name": "Panel Color Opacity",
+        "Version": "1.0"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-API": "declarativeappletscript"
+}

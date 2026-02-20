@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <pattern id="checker" viewBox="0 0 10 10" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="5" height="5" fill="#c0c0c0"/>
+      <rect x="5" y="5" width="5" height="5" fill="#c0c0c0"/>
+      <rect x="5" width="5" height="5" fill="#fff"/>
+      <rect y="5" width="5" height="5" fill="#fff"/>
+    </pattern>
+    <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff0000"/>
+      <stop offset="33%" stop-color="#00ff00"/>
+      <stop offset="66%" stop-color="#0000ff"/>
+      <stop offset="100%" stop-color="#ff00ff"/>
+    </linearGradient>
+  </defs>
+  
+  <rect x="2" y="10" width="44" height="28" rx="4" fill="url(#checker)"/>
+  <rect x="2" y="10" width="44" height="28" rx="4" fill="url(#rainbow)" opacity="0.6"/>
+  <rect x="2" y="10" width="44" height="28" rx="4" fill="none" stroke="#222" stroke-width="2"/>
+  
+  <rect x="6" y="14" width="8" height="20" rx="2" fill="#fff" opacity="0.8"/>
+  <rect x="18" y="14" width="8" height="20" rx="2" fill="#fff" opacity="0.8"/>
+  <rect x="30" y="14" width="12" height="20" rx="2" fill="#fff" opacity="0.8"/>
+</svg>

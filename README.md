@@ -6,8 +6,9 @@ A powerful and intuitive Plasmoid widget for KDE Plasma 6 that grants you total 
 
 - **Custom Color Picker**: Choose any RGBA color for your panels with a native Kirigami interface.
 - **Dynamic Transparency**: Adjust opacity from 0% (fully transparent) to 100% (solid) using a precise slider.
+- **Glass Effect (Blur)**: Enable the native KDE Plasma blur effect on your custom-colored panels.
+- **Blur Intensity Simulation**: Fine-tune how the color interacts with the background blur for the perfect glass look.
 - **Real-time Updates**: See your changes instantly across all your desktop panels.
-- **Blurred Backgrounds**: Toggle the Plasma blur effect to maintain readability while keeping a glass-like aesthetic.
 - **Light/Dark Mode Aware**: Automatically adjusts contrast and readability based on your system theme.
 - **Multiple Panel Support**: Configure individual settings for different panels (Top, Bottom, Sidebar).
 
