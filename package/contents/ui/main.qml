@@ -9,8 +9,6 @@ PlasmoidItem {
     property bool isEnabled: Plasmoid.configuration.isEnabled
     property color bgColor: Plasmoid.configuration.backgroundColor
     property real bgOpacity: Plasmoid.configuration.backgroundOpacity
-    property bool blurEnabled: Plasmoid.configuration.blurEnabled
-    property real blurAmount: Plasmoid.configuration.blurAmount
 
     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
     
@@ -54,29 +52,11 @@ PlasmoidItem {
         updateContainmentBackground();
     }
 
-    onBlurEnabledChanged: {
-        updateContainmentBackground();
-    }
-
     function updateContainmentBackground() {
         if (!containmentItem) return;
-        
-        if (!isEnabled) {
-            containmentItem.Plasmoid.backgroundHints = PlasmaCore.Types.DefaultBackground;
-            return;
-        }
-
-        // To have blur in Plasma 6, we usually need TranslucentBackground.
-        // If we use NoBackground, we lose the compositor-side blur.
-        containmentItem.Plasmoid.backgroundHints = blurEnabled
-            ? PlasmaCore.Types.TranslucentBackground
-            : PlasmaCore.Types.NoBackground;
-        
-        // Try to find and hide the original background SVG if blur is enabled
-        // so only our custom rectangle (and the system blur) is visible.
-        if (panelBg) {
-            panelBg.visible = !blurEnabled;
-        }
+        containmentItem.Plasmoid.backgroundHints = isEnabled
+            ? PlasmaCore.Types.NoBackground
+            : PlasmaCore.Types.DefaultBackground;
     }
 
     property Item panelLayout: {
@@ -105,8 +85,7 @@ PlasmoidItem {
         Rectangle {
             id: bgRect
             color: root.bgColor
-            // If blur is enabled, we multiply by blurAmount to simulate intensity
-            opacity: root.blurEnabled ? root.bgOpacity * (0.5 + root.blurAmount * 0.5) : root.bgOpacity
+            opacity: root.bgOpacity
             visible: root.isEnabled
 
             anchors.fill: parent
@@ -118,10 +97,7 @@ PlasmoidItem {
 
     onPanelBgChanged: {
         if (panelBg && !customBgObj) {
-            // Parent to panelBg's parent so we can hide panelBg without hiding our custom rect
-            customBgObj = bgComponent.createObject(panelBg.parent);
-            customBgObj.anchors.fill = panelBg;
-            updateContainmentBackground();
+            customBgObj = bgComponent.createObject(panelBg);
         }
     }
 
@@ -131,9 +107,6 @@ PlasmoidItem {
 
     Component.onDestruction: {
         if (customBgObj) customBgObj.destroy();
-        if (containmentItem) {
-            containmentItem.Plasmoid.backgroundHints = PlasmaCore.Types.DefaultBackground;
-            if (panelBg) panelBg.visible = true;
-        }
+        if (containmentItem) containmentItem.Plasmoid.backgroundHints = PlasmaCore.Types.DefaultBackground;
     }
 }

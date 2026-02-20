@@ -14,11 +14,5 @@
     <entry name="backgroundOpacity" type="Double">
       <default>0.5</default>
     </entry>
-    <entry name="blurEnabled" type="Bool">
-      <default>false</default>
-    </entry>
-    <entry name="blurAmount" type="Double">
-      <default>0.5</default>
-    </entry>
   </group>
 </kcfg>
